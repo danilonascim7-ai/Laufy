@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Laufey+</title>
+        <meta name="description" content="Laufey+, por quem ja foi assim como voce">
+        <meta name="author" content="Daxz">
+        <style>
+            h1{color: rgba(184, 26, 26, 0.527);}
+        </style>
+        <link rel="stylesheet" href="../static/style2.css">
+    </head>
+    <body>
+        <header>
+            <section class="Title">
+                <a href="/" style="text-decoration: none; color: inherit;"><h2>Laufey+</h2></a>
+            </section>
+            <img src="../static/cpu-chip-technology-digital-electronic-computer-processor-illustration-board-icon-and-communication-tech-hardware-microchip-motherboard-engineering-datum-and-symbol-pc-core-equipment-device-vector-rem.png" alt="" class="cpulog">
+            <img src="../static/graphics-card-icon-doodle-hand-drawn-or-outline-icon-style-vector-removebg-preview.png" alt="" class="gpu">
+            <img src="../static/istockphoto-1402596094-612x612-removebg-preview.png" alt="" class="meo">
+            <img src="../static/b131eeb3cd5ffdd6b124b7793d21a79a-removebg-preview.png" alt="" class="mainb">
+            <img src="../static/R.png" alt="" class="instagram">
+            <img src="../static/logo-x-modern-2023-7cbd.png" alt="" class="X">
+        </header>
+
+        <main>
+
+            <div class="linha-principal">
+                
+                <div class="anuncio-box anuncio-lateral">
+                    <span>Anúncio Lateral</span>
+                </div>
+
+                <div class="container">
+                    <form action="/resultado" method="post" class="fom">
+                        <section>
+                            <h2>Orçamento</h2>
+                            <select name="orcamento" id="orç">
+                                <option value="1015">1000~1500R$</option>
+                                <option value="1520">1500~2000R$</option>
+                                <option value="2025">2000~2500R$</option>
+                                <option value="2530">2500~3000R$</option>
+                                <option value="3035">3000~3500R$</option>
+                                <option value="3540">3500~4000R$</option>
+                                <option value="3035">4500~5000R$</option>
+                                <option value="5055">5000~5500R$</option>
+                            </select>
+                        </section>
+
+                        <section class="cpu">
+                            <h2>Plataforma de Preferência</h2>
+                            <select name="preferencia" id="pref">
+                                <option value="Custo">Não tenho preferencia</option>
+                                <option value="Intel">Intel</option>
+                                <option value="Amd">Amd</option>
+                            </select>
+                        </section>
+
+                        <section>
+                            <h2>Gráficos / Vídeo</h2>
+                            <select name="tipopl" id="pl">
+                                <option value="Custo beneficio">Não tenho preferencia</option>
+                                <option value="Dedicada">Dedicada</option>
+                                <option value="Integrada">Integrada</option>
+                            </select>
+                        </section>
+
+                        <section class="had">
+                            <h2>Perfil do Setup</h2>
+                            <select name="foco" id="foco">
+                                <option value="Desempenho">Desempenho</option>
+                                <option value="Custo-Benefício">Custo-Benefício</option>
+                            </select>
+                        </section> 
+
+                        <button type="submit" class="button">Buscar</button>
+                    </form>
+                </div>
+
+                <div class="anuncio-box anuncio-lateral">
+                    <span>Anúncio Lateral</span>
+                </div>
+
+            </div>
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <p>&copy; 2026 Laufey+. Todos os direitos reservados.</p>
+                <p>Feito com &hearts; por <a href="/Twitch" target="_blank" class="footer-link">Daxz e Gabzx</a></p>
+            </div> 
+        </footer>
+
+        <div id="resultModal" class="modal">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <h2>Setup Recomendado</h2>
+                <div id="resultado-texto">Processando melhor setup...</div>
+            </div>
+        </div>
+
+        <script>
+        document.querySelector('.fom').addEventListener('submit', function(e) {
+            e.preventDefault(); 
+
+            const modal = document.getElementById('resultModal');
+            const resultadoTexto = document.getElementById('resultado-texto');
+            
+            resultadoTexto.innerHTML = "Processando o melhor setup...";
+            modal.style.display = "block";
+
+            const formData = new FormData(this);
+
+            fetch('/resultado', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.sucesso) {
+                    resultadoTexto.innerHTML = `
+                        <p style="margin: 12px 0; font-size: 16px;"><strong>• CPU:</strong> ${data.cpu}</p>
+                        <p style="margin: 12px 0; font-size: 16px;"><strong>• GPU:</strong> ${data.gpu}</p>
+                        <p style="margin: 12px 0; font-size: 16px;"><strong>• Kit Base:</strong> ${data.base}</p>
+                        <hr style="border: 1px solid #000000; margin: 15px 0;">
+                        <h3 style="color: #000000; text-align: center; font-size: 20px;">Total Estimado: R$ ${data.preco}</h3>
+                    `;
+                } else {
+                    resultadoTexto.innerHTML = `<p style="color: #000000; text-align: center; font-weight: bold;">${data.mensagem}</p>`;
+                }
+            })
+            .catch(error => {
+                resultadoTexto.innerHTML = "<p style='color: red; text-align: center;'>Erro ao conectar com o servidor do Flask.</p>";
+                console.error('Erro na requisição:', error);
+            });
+        });
+
+        document.querySelector('.close-button').addEventListener('click', function() {
+            document.getElementById('resultModal').style.display = "none";
+        });
+
+        window.addEventListener('click', function(e) {
+            const modal = document.getElementById('resultModal');
+            if (e.target == modal) {
+                modal.style.display = "none";
+            }
+        });
+        </script>
+    </body>
+</html>
