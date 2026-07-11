@@ -126,5 +126,10 @@ def resultado():
 def discord():
     return redirect("https://www.twitch.tv/danihn") 
 
+@app.route('/ads.txt')
+def ads_txt():
+    return app.send_static_file('ads.txt')
+
+
 if __name__ == "__main__":
     app.run(debug=True)
