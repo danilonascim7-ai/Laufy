@@ -7,33 +7,24 @@
         <style>
             h1{color: rgba(184, 26, 26, 0.527);}
         </style>
-        <link rel="stylesheet" href="../static/style2.css">
-        <head>
-        <title>Laufey+</title>
-        <meta name="description" content="Laufey+, por quem ja foi assim como voce">
-        <meta name="author" content="Daxz">
-        <style>
-            h1{color: rgba(184, 26, 26, 0.527);}
-        </style>
         <!-- CSS Ajustado para o padrão Flask -->
         <link rel="stylesheet" href="{{ url_for('static', filename='style2.css') }}">
 
-        <!-- COLOQUE O CÓDIGO DO GOOGLE ADSENSE AQUI EMBAIXO: -->
-        <script async src="<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9935349986196043"
-     crossorigin="anonymous"></script>" crossorigin="anonymous"></script>
-    </head>
+        <!-- Código do Google AdSense Corrigido -->
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9935349986196043" crossorigin="anonymous"></script>
     </head>
     <body>
         <header>
             <section class="Title">
                 <a href="/" style="text-decoration: none; color: inherit;"><h2>Laufey+</h2></a>
             </section>
-            <img src="../static/cpu-chip-technology-digital-electronic-computer-processor-illustration-board-icon-and-communication-tech-hardware-microchip-motherboard-engineering-datum-and-symbol-pc-core-equipment-device-vector-rem.png" alt="" class="cpulog">
-            <img src="../static/graphics-card-icon-doodle-hand-drawn-or-outline-icon-style-vector-removebg-preview.png" alt="" class="gpu">
-            <img src="../static/istockphoto-1402596094-612x612-removebg-preview.png" alt="" class="meo">
-            <img src="../static/b131eeb3cd5ffdd6b124b7793d21a79a-removebg-preview.png" alt="" class="mainb">
-            <img src="../static/R.png" alt="" class="instagram">
-            <img src="../static/logo-x-modern-2023-7cbd.png" alt="" class="X">
+            <!-- Imagens e Ícones Corrigidos com url_for -->
+            <img src="{{ url_for('static', filename='cpu-chip-technology-digital-electronic-computer-processor-illustration-board-icon-and-communication-tech-hardware-microchip-motherboard-engineering-datum-and-symbol-pc-core-equipment-device-vector-rem.png') }}" alt="" class="cpulog">
+            <img src="{{ url_for('static', filename='graphics-card-icon-doodle-hand-drawn-or-outline-icon-style-vector-removebg-preview.png') }}" alt="" class="gpu">
+            <img src="{{ url_for('static', filename='istockphoto-1402596094-612x612-removebg-preview.png') }}" alt="" class="meo">
+            <img src="{{ url_for('static', filename='b131eeb3cd5ffdd6b124b7793d21a79a-removebg-preview.png') }}" alt="" class="mainb">
+            <img src="{{ url_for('static', filename='R.png') }}" alt="" class="instagram">
+            <img src="{{ url_for('static', filename='logo-x-modern-2023-7cbd.png') }}" alt="" class="X">
         </header>
 
         <main>
