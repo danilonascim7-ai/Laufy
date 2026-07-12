@@ -262,3 +262,11 @@ footer {
         margin-top: 130px;
     }
 }
+.git{
+    position: absolute;
+    width: 3rem;
+    left: 170px;
+    margin-top: -1.4rem;
+
+
+}
