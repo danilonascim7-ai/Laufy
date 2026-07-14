@@ -33,7 +33,11 @@ banco_produtos = [
     {"nome": "NVIDIA RTX 4080 Super 16GB", "tipo": "gpu", "marca": "nvidia", "preco": 7300, "dedicada": True},
     {"nome": "AMD Radeon RX 7900 XTX 24GB", "tipo": "gpu", "marca": "amd", "preco": 6900, "dedicada": True},
     {"nome": "NVIDIA RTX 4090 24GB (A Rainha)", "tipo": "gpu", "marca": "nvidia", "preco": 12500, "dedicada": True},
+    {"nome": "NVIDIA RTX 5070 12GB", "tipo": "gpu", "marca": "nvidia", "preco": 6850, "dedicada": True},
 
+    
+    
+    
     # ==================== PEÇAS BASE OBRIGATÓRIAS ====================
     {"nome": "Kit Base Econômico (16GB RAM DDR4 + SSD 512GB + Fonte 500W + Gabinete)", "tipo": "base_baixo", "preco": 520},
     {"nome": "Kit Base Premium (32GB RAM DDR5 + SSD NVMe 2TB + Fonte 850W Gold + Water Cooler + Gabinete Gamer)", "tipo": "base_alto", "preco": 1600}
@@ -112,7 +116,22 @@ def resultado():
         "3540": (3500, 4000),
         "4045": (4000, 4500),
         "4550": (4500, 5000),
-        "5055": (5000, 5500)
+        "5055": (5000, 5500),
+        "5560": (5500, 6000),
+        "6065": (6000, 6500),
+        "6570": (6500, 7000),
+        "7075": (7000, 7500),
+        "7580": (7500, 8000),
+        "8085": (8000, 8500),
+        "8590": (8500, 9000),
+        "9095": (9000, 9500),
+        "95100": (9500, 10000),
+        "100110": (10000, 11000),
+        "110120": (11000, 12000),
+        "120130": (12000, 13000),
+        "130140": (13000, 14000),
+        "140150": (14000, 15000)
+    
     }
     
     orc_min, orc_max = limites_orcamento.get(orcamento_selecionado, (1000, 1500))
@@ -133,6 +152,26 @@ def ads_txt():
 @app.route('/git')
 def github():
     return redirect('https://github.com/danilonascim7-ai')
+
+@app.route('/home')
+def homes():
+    return render_template('index.html')
+
+@app.route('/nos')
+def retur():
+    return render_template('index2.html')
+
+@app.route('/Pol')
+def pole():
+    return render_template('index3.html')
+
+@app.route('/insta')
+def inst():
+    return redirect('https://www.instagram.com/laufyoficial/')
+
+@app.route('/x')
+def x():
+    return redirect('https://x.com/laufyoficial')
 
 if __name__ == "__main__":
     app.run(debug=True)
