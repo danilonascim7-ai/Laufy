@@ -29,11 +29,13 @@ header {
     width: 3.0rem;
     position: absolute;
     left: 30px;
+    margin-top: -1.3rem;
 }
 .X {
     width: 3rem;
     position: absolute;
     left: 100px;
+    margin-top: -1.3rem;
 }
 .cpulog {
     width: 5rem;
@@ -233,8 +235,8 @@ label {
 /* ==================== RODAPÉ ==================== */
 footer {
     width: 100%;
-    padding: 10px 0;        /* <--- Reduzido de 20px para 10px */
-    margin-top: 250px;       /* <--- Reduzido de 60px para 40px */
+    padding: 10px 0;        
+    margin-top: 250px;       
     background: rgba(255, 255, 255, 0.2); 
     backdrop-filter: blur(10px);
     border-top: 1px solid rgba(0, 0, 0, 0.05);
@@ -242,7 +244,7 @@ footer {
     color: #555; 
     font-family: sans-serif;
     font-size: 13px;
-    }        /* <--- Fonte ligeiramente menor para ficar elegante */
+    }     
 
 .footer-content p {
     margin: 8px 0;
@@ -269,4 +271,69 @@ footer {
     margin-top: -1.4rem;
 
 
+}
+.menu-icon {
+    width: 4rem;
+    position: absolute;
+    right: 2rem;
+    
+}
+
+.sidebar {
+  height: 100%;
+  width: 250px; 
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  right: -250px; 
+  background-color: #ffffff; 
+  box-shadow: -2px 0px 10px rgba(0, 0, 0, 0.1);
+  overflow-x: hidden;
+  transition: 0.4s; 
+  padding-top: 60px;
+  border-radius: 10px;
+}
+
+
+.sidebar a {
+  padding: 15px 25px;
+  text-decoration: none;
+  font-size: 18px;
+  color: #030202;
+  display: block;
+  transition: 0.3s;
+}
+
+
+.sidebar a:hover {
+  background-color: #f1f1f1;
+}
+
+
+.sidebar .btn-fechar {
+  position: absolute;
+  top: 15px;
+  left: 25px;
+  font-size: 36px;
+  cursor: pointer;
+}
+
+
+.sidebar.ativo {
+  right: 0; 
+}
+.home{
+    width: 2.5rem;
+    position: absolute;
+    right: 3rem;
+    margin-top: -1rem;
+}
+.line {
+    background-color: white;           /* Cor de fundo branca */
+    padding: 30px;                     /* Espaço interno para o texto não grudar na borda */
+    border-radius: 20px;               /* Deixa as pontas arredondadas */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* O segredo da sombra suave */
+    max-width: 800px;                  /* Limita a largura para não ficar muito esticado */
+    margin: 50px auto;                 /* Centraliza na tela */
+    color: #333;                       /* Ajusta a cor do texto para ficar legível no branco */
 }
