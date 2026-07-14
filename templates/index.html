@@ -9,7 +9,7 @@
         </style>
         <!-- CSS Ajustado para o padrão Flask -->
         <link rel="stylesheet" href="{{ url_for('static', filename='style2.css') }}">
-
+        
         <!-- Código do Google AdSense Corrigido -->
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9935349986196043" crossorigin="anonymous"></script>
     </head>
@@ -19,13 +19,31 @@
                 <a href="/" style="text-decoration: none; color: inherit;"><h2>Laufey+</h2></a>
             </section>
             <!-- Imagens e Ícones Corrigidos com url_for -->
-            <img src="{{ url_for('static', filename='cpu-chip-technology-digital-electronic-computer-processor-illustration-board-icon-and-communication-tech-hardware-microchip-motherboard-engineering-datum-and-symbol-pc-core-equipment-device-vector-rem.png') }}" alt="" class="cpulog">
-            <img src="{{ url_for('static', filename='graphics-card-icon-doodle-hand-drawn-or-outline-icon-style-vector-removebg-preview.png') }}" alt="" class="gpu">
-            <img src="{{ url_for('static', filename='istockphoto-1402596094-612x612-removebg-preview.png') }}" alt="" class="meo">
-            <img src="{{ url_for('static', filename='b131eeb3cd5ffdd6b124b7793d21a79a-removebg-preview.png') }}" alt="" class="mainb">
-            <img src="{{ url_for('static', filename='R.png') }}" alt="" class="instagram">
-            <img src="{{ url_for('static', filename='logo-x-modern-2023-7cbd.png') }}" alt="" class="X">
+            <img src="{{url_for('static', filename='menu.png')}}" alt="" class="menu-icon" id="menu-barras">
+            <a href="/insta"><img src="{{ url_for('static', filename='R.png') }}" alt="" class="instagram"></a>
+            <a href="/x"><img src="{{ url_for('static', filename='logo-x-modern-2023-7cbd.png') }}" alt="" class="X"></a>
             <a href="/git"><img src="{{url_for('static' , filename='github_logo_icon_229278.webp')}}" alt="" class="git"></a>
+        
+            <!-- O seu botão atual das 3 barrinhas (garanta que tenha um id) -->
+<div id="menu-barras" class="menu-icon">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+
+<!-- A aba/menu oculto que vai abrir -->
+<div id="menu-lateral" class="sidebar">
+  <!-- Botão para fechar a aba se o usuário quiser -->
+  <span class="btn-fechar" id="fechar-menu">&times;</span>
+  
+  <!-- Links/Opções do seu menu -->
+  <a href="/home">Home</a>
+  <a href="Pol">Política de Privacidade</a>
+  <a href="/nos">Sobre Nós</a>
+</div>
+        
+        
+        
         </header>
 
         <main>
@@ -49,13 +67,30 @@
                                 <option value="3540">3500~4000R$</option>
                                 <option value="3035">4500~5000R$</option>
                                 <option value="5055">5000~5500R$</option>
+                                <option value="5560">5500~6000R$</option>
+                                <option value="6065">6000~6500R$</option>
+                                <option value="6570">6500~7000R$</option>
+                                <option value="7075">7000~7500R$</option>
+                                <option value="7580">7500~8000R$</option>
+                                <option value="8085">8000~8500R$</option>
+                                <option value="8590">8500~9000R$</option>
+                                <option value="9095">9000~9500R$</option>
+                                <option value="95100">9500~10000R$</option>
+                                <option value="100110">10000~11000R$</option>
+                                <option value="110120">11000~12000R$</option>
+                                <option value="120130">12000~13000R$</option>
+                                <option value="130140">13000~14000R$</option>
+                                <option value="140150">14000~15000R$</option>
+                            
+                            
+                            
                             </select>
                         </section>
 
                         <section class="cpu">
                             <h2>Plataforma de Preferência</h2>
                             <select name="preferencia" id="pref">
-                                <option value="Custo">Não tenho preferencia</option>
+                                <option value="Custo">Não tenho preferência</option>
                                 <option value="Intel">Intel</option>
                                 <option value="Amd">Amd</option>
                             </select>
@@ -64,7 +99,7 @@
                         <section>
                             <h2>Gráficos / Vídeo</h2>
                             <select name="tipopl" id="pl">
-                                <option value="Custo beneficio">Não tenho preferencia</option>
+                                <option value="Custo beneficio">Não tenho preferência</option>
                                 <option value="Dedicada">Dedicada</option>
                                 <option value="Integrada">Integrada</option>
                             </select>
@@ -150,6 +185,28 @@
                 modal.style.display = "none";
             }
         });
+        // Pegando os elementos do HTML
+const menuBarras = document.getElementById('menu-barras');
+const menuLateral = document.getElementById('menu-lateral');
+const fecharMenu = document.getElementById('fechar-menu');
+
+// Função para abrir o menu ao clicar nas 3 barrinhas
+menuBarras.addEventListener('click', () => {
+  menuLateral.classList.add('ativo');
+});
+
+// Função para fechar o menu ao clicar no X
+fecharMenu.addEventListener('click', () => {
+  menuLateral.classList.remove('ativo');
+});
+
+// Opcional: Fecha o menu se clicar em qualquer lugar fora dele
+document.addEventListener('click', (e) => {
+  if (!menuLateral.contains(e.target) && !menuBarras.contains(e.target)) {
+    menuLateral.classList.remove('ativo');
+  }
+});
         </script>
-    </body>
+    
+</body>
 </html>

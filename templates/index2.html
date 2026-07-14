@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nós</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style2.css') }}">
+</head>
+<body>
+    <header>
+        
+            <section class="Title">
+                <a href="/" style="text-decoration: none; color: inherit;"><h2>Laufey+</h2></a>
+            </section>
+            <!-- Imagens e Ícones Corrigidos com url_for -->
+            <a href="/"><img src="{{url_for('static', filename='home.png')}}" alt="" class="home"></a>
+            <a href="/insta"><img src="{{ url_for('static', filename='R.png') }}" alt="" class="instagram"></a>
+            <a href="/x"><img src="{{ url_for('static', filename='logo-x-modern-2023-7cbd.png') }}" alt="" class="X"></a>
+            <a href="/git"><img src="{{url_for('static' , filename='github_logo_icon_229278.webp')}}" alt="" class="git"></a>
+
+
+    </header>
+    <style>
+        .return{
+            position: absolute;
+            right: 200px;
+        }
+        h1{
+            text-align: center;
+            margin-top: 10px;
+            }
+            main{
+                margin-top: 100px;
+                flex: 1;
+                text-align: justify;
+                padding: 0% 20% 20% 20%;
+                box-sizing: border-box;
+            }
+    </style>
+    <main>
+        <div class="line"><h1>Sobre o Projeto</h1> <br>
+            O <strong>Laufey+</strong> nasceu de uma frustração real que quase todo entusiasta de tecnologia ou gamer já enfrentou: 
+        <em>"Como escolher as peças certas para o meu PC sem jogar dinheiro fora ou sofrer com incompatibilidades?"</em>
+    </p>
+
+    <h2 style="color: #000000; margin-top: 30px;">Por quem já foi assim como você</h2>
+    <p>
+        Criado por <strong>Daxz e Gabzx</strong>, o projeto não surgiu de uma grande corporação, mas sim da comunidade. Nós já estivemos exatamente no seu lugar. Já passamos horas analisando fóruns, calculando preços de processadores, checando se a placa-mãe precisaria de atualização de BIOS e tentando entender se aquela placa de vídeo caberia no orçamento. Sabemos o quão estressante pode ser o medo de errar na escolha de um componente e acabar com uma luz de erro acesa na placa-mãe. Por isso, decidimos simplificar as coisas.
+    </p>
+
+    <h2 style="color: #000000; margin-top: 30px;">A Nossa Missão</h2>
+    <p>
+        Nossa missão é democratizar o acesso à informação de hardware. Queremos que qualquer pessoa — seja um jogador focado em conseguir o máximo de FPS no <em>Counter-Strike</em> ou <em>Fortnite</em>, ou um profissional que precisa de uma máquina de trabalho estável — consiga achar a configuração perfeita para o seu bolso em poucos cliques.
+    </p>
+    <p>
+        O algoritmo do Laufey+ foi programado para pensar como um montador experiente: pesando o custo-benefício, evitando gargalos (bottlenecks) entre CPU e GPU, e entregando uma base sólida para que o seu investimento dure por muitos anos.
+    </p>
+
+    <h2 style="color: #000000; margin-top: 30px;">Transparência e Comunidade</h2>
+    <p>
+        Não somos patrocinados por marcas específicas (Intel, AMD, NVIDIA). Nossas recomendações são baseadas em dados técnicos reais de mercado e no balanço bruto de desempenho. O Laufey+ é gratuito e feito de gamers para gamers.
+    </p>
+        
+        </div>
+
+
+
+
+
+
+
+
+
+    </main>
+
+    <footer>
+        <div class="footer-content">
+                <p>&copy; 2026 Laufey+. Todos os direitos reservados.</p>
+                <p>Feito com &hearts; por <a href="/Twitch" target="_blank" class="footer-link">Daxz e Gabzx</a></p>
+            
+        </div> 
+    </footer>
+
+
+
+
+</body>
+</html>
